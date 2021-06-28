@@ -18,20 +18,23 @@ public class Api_2_RMm_Sgp_2 extends Applet implements ReaderListener {
 	/**
 	 * INS values to determine which feature to test or verify
 	 */
+	private static final byte INS_TEST_HCI_DISABLED = 0x01;
 	private static final byte INS_TEST_RECEIVING_HCI_MESSAGE = 0x02;
 	private static final byte INS_TEST_ILLIGALVALUE = 0x05;
+	private static final byte INS_VERIFY_HCI_DISABLED = 0x11;
 	private static final byte INS_VERIFY_RECEIVING_HCI_MESSAGE = 0x12;
 	private static final byte INS_VERIFY_ILLIGALVALUE = 0x15;
 	
 	/**
 	 * Keeps the feature to test. Value is set in process() and used in onCallback().
 	 */
-	private int featureToTest;
+	private byte featureToTest;
 
 	/**
 	 * Variables to remember the thrown exception. Set in onCallback() and evaluated in
 	 * process() with INS >= 0x11.
 	 */
+	private boolean exceptionHciDisabledThrown;
 	private boolean exceptionIlligalValueThrown;
 	private boolean exceptionReceivingHciThrown;
 
@@ -83,6 +86,9 @@ public class Api_2_RMm_Sgp_2 extends Applet implements ReaderListener {
 		byte buffer[] = apdu.getBuffer();
 
 		switch (buffer[ISO7816.OFFSET_INS]) {
+		case INS_TEST_HCI_DISABLED:
+			featureToTest = 1;
+			break;
 		case INS_TEST_RECEIVING_HCI_MESSAGE:
 			featureToTest = 2;
 			break;
@@ -90,6 +96,11 @@ public class Api_2_RMm_Sgp_2 extends Applet implements ReaderListener {
 			featureToTest = 5;
 			break;
 			
+		case INS_VERIFY_HCI_DISABLED:
+			if (exceptionHciDisabledThrown) {
+				ISOException.throwIt((short) (ISO7816.SW_NO_ERROR + 3));
+			}
+			break;
 		case INS_VERIFY_RECEIVING_HCI_MESSAGE:
 			if (exceptionReceivingHciThrown) {
 				ISOException.throwIt((short) (ISO7816.SW_NO_ERROR + 4));
@@ -128,7 +139,11 @@ public class Api_2_RMm_Sgp_2 extends Applet implements ReaderListener {
 					try {
 						readerMessage.prepareAndSendGetParameterCommand(paramID);
 					} catch (HCIException e) {
-						if (e.getReason() == HCIException.HCI_FRAGMENTED_MESSAGE_ONGOING) {
+						if (e.getReason() == HCIException.HCI_CURRENTLY_DISABLED) {
+							if (featureToTest == 1) {
+								exceptionHciDisabledThrown = true;
+							}
+						} else if (e.getReason() == HCIException.HCI_FRAGMENTED_MESSAGE_ONGOING) {
 							if (featureToTest == 2) {
 								exceptionReceivingHciThrown = true;
 							}
