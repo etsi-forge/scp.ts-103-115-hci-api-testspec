@@ -1,0 +1,751 @@
+// converted by version  [v3.0.2]
+// on Fri Nov 08 11:49:12 CET 2013
+
+.package uicc/hci/test/services/readermode/api_2_rmm_rrp {
+	.aid 0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x27:0x1:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.4;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x1:0x0:0x0 1.0;		//uicc/hci/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x3:0x0 1.0;		//uicc/hci/services/readermode
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x1:0x51:0x2 1.0;		//org/globalplatform/contactless
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x27:0x1:0x1:0x2 Api_2_RMm_Rrp_1;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x27:0x1:0x2:0x2 Api_2_RMm_Rrp_2;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x27:0x1:0x3:0x2 Api_2_RMm_Rrp_3;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef boolean Api_2_RMm_Rrp_1/expectHciTransmissionFailed;
+		// 1
+		instanceFieldRef 2.2 Api_2_RMm_Rrp_1/readerService;
+		// 2
+		instanceFieldRef 2.2 Api_2_RMm_Rrp_2/readerService;
+		// 3
+		instanceFieldRef 2.2 Api_2_RMm_Rrp_3/readerService;
+		// 4
+		staticMethodRef 1.4.0(S)Luicc/hci/framework/HCIService;;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+			.descriptor	Luicc/hci/framework/HCIService;	1.2;
+
+		// 5
+		.classRef 2.2;		// uicc/hci/services/readermode/ReaderService
+		// 6
+		.classRef 1.3;		// uicc/hci/framework/HCIException
+		// 7
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 8
+		.classRef Api_2_RMm_Rrp_1;
+		// 9
+		staticMethodRef Api_2_RMm_Rrp_1/<init>()V;
+		// 10
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 11
+		.classRef 2.1;		// uicc/hci/services/readermode/ReaderMessage
+		// 12
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 13
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 14
+		.classRef Api_2_RMm_Rrp_2;
+		// 15
+		staticMethodRef Api_2_RMm_Rrp_2/<init>()V;
+		// 16
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 17
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 18
+		staticFieldRef boolean Api_2_RMm_Rrp_2/exceptionDisabledThrown;
+		// 19
+		staticFieldRef boolean Api_2_RMm_Rrp_2/exceptionNotSatisfiedThrown;
+		// 20
+		staticFieldRef boolean Api_2_RMm_Rrp_2/expectHciTransmissionFailed;
+		// 21
+		virtualMethodRef 1.3.1()S;		// getReason()S
+		// 22
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 23
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 24
+		.classRef Api_2_RMm_Rrp_3;
+		// 25
+		staticMethodRef Api_2_RMm_Rrp_3/<init>()V;
+		// 26
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 27
+		staticFieldRef boolean Api_2_RMm_Rrp_3/exceptionDisabledThrown;
+		// 28
+		staticFieldRef boolean Api_2_RMm_Rrp_3/expectHciTransmissionFailed;
+		// 29
+		staticMethodRef 4.5.4(SZ)V;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+	}
+
+	.class public Api_2_RMm_Rrp_1 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 readerService 0;		// Luicc/hci/services/readermode/ReaderService;
+			private boolean expectHciTransmissionFailed 1;		// Z
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/readermode/ReaderListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 13;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sconst_0;
+					putfield_b 0;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.expectHciTransmissionFailed
+					aload_0;
+					invokevirtual 23;		// register()V
+				L1:	aload_0;
+					sconst_2;
+					invokestatic 4;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 5;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderService
+					putfield_a 1;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.readerService
+					getfield_a_this 1;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.readerService
+					aload_0;
+					invokeinterface 2 5 0;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 1;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.readerService
+					sconst_2;
+					invokeinterface 2 5 3;		// uicc/hci/services/readermode/ReaderService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 6;
+			}
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 8;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1
+					dup;
+					invokespecial 9;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 10;		// selectingApplet()Z
+					ifeq L2;
+				L1:	getfield_a_this 1;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.readerService
+					bspush 80;
+					invokeinterface 2 5 3;		// uicc/hci/services/readermode/ReaderService
+				L2:	return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 5;
+			.locals 5;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 11;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderMessage
+					astore_3;
+					aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 64;
+					if_scmpne L5;
+				L1:	sload_1;
+					bspush 80;
+					if_scmpne L5;
+				L2:	aload_3;
+					invokeinterface 1 11 4;		// uicc/hci/services/readermode/ReaderMessage
+					sconst_0;
+					baload;
+					slookupswitch L5 2 0 L4 3 L3;
+				L3:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+					return;
+				L4:	sconst_m1;
+					sstore 4;
+					bspush 10;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_4;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 7;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 8;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 9;
+					sconst_1;
+					bastore;
+					astore 5;
+					sconst_0;
+					sstore 6;
+					aload 5;
+					arraylength;
+					sstore 7;
+					aload_0;
+					sconst_1;
+					putfield_b 0;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.expectHciTransmissionFailed
+					aload_3;
+					sload 4;
+					aload 5;
+					sload 6;
+					sload 7;
+					invokeinterface 5 11 8;		// uicc/hci/services/readermode/ReaderMessage
+					return;
+				L5:	aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush -128;
+					if_scmpne L9;
+				L6:	aload_3;
+					invokeinterface 1 11 3;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 16;
+					if_scmpne L9;
+				L7:	getfield_b_this 0;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_1.expectHciTransmissionFailed
+					ifeq L9;
+				L8:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+				L9:	return;
+		}
+
+	}
+
+	.class public Api_2_RMm_Rrp_2 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 readerService 0;		// Luicc/hci/services/readermode/ReaderService;
+			private static final byte INS_HCI_INTERFACE_DISABLED = 1;		// B
+			private static final short OK_EXCEPTION_DISABLED_RECEIVED = -28669;		// S
+			private static final byte INS_HCI_COND_NOT_SATISFIED = 2;		// B
+			private static final short OK_EXCEPTION_NOT_SATISFIED_RECEIVED = -28668;		// S
+			private static boolean expectHciTransmissionFailed;		// Z
+			private static boolean exceptionNotSatisfiedThrown;		// Z
+			private static boolean exceptionDisabledThrown;		// Z
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/readermode/ReaderListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 13;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 12;		// register()V
+				L1:	aload_0;
+					sconst_2;
+					invokestatic 4;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 5;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderService
+					putfield_a 2;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.readerService
+					getfield_a_this 2;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.readerService
+					aload_0;
+					invokeinterface 2 5 0;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 2;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.readerService
+					sconst_2;
+					invokeinterface 2 5 3;		// uicc/hci/services/readermode/ReaderService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 6;
+			}
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 14;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2
+					dup;
+					invokespecial 15;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 16;		// selectingApplet()Z
+					ifeq L2;
+				L1:	getfield_a_this 2;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.readerService
+					bspush 80;
+					invokeinterface 2 5 3;		// uicc/hci/services/readermode/ReaderService
+					return;
+				L2:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L7 2 1 L3 2 L5;
+				L3:	getstatic_b 18;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.exceptionDisabledThrown
+					ifeq L5;
+				L4:	sspush -28669;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	getstatic_b 19;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.exceptionNotSatisfiedThrown
+					ifeq L7;
+				L6:	sspush -28668;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 5;
+			.locals 6;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 11;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderMessage
+					astore_3;
+					aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 64;
+					if_scmpne_w L11;
+				L1:	sload_1;
+					bspush 80;
+					if_scmpne_w L11;
+				L2:	aload_3;
+					invokeinterface 1 11 4;		// uicc/hci/services/readermode/ReaderMessage
+					sconst_0;
+					baload;
+					slookupswitch L11 2 0 L3 3 L4;
+				L3:	sconst_m1;
+					sstore 4;
+					bspush 10;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_4;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 7;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 8;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 9;
+					sconst_1;
+					bastore;
+					astore 5;
+					sconst_0;
+					sstore 6;
+					aload 5;
+					arraylength;
+					sstore 7;
+					sconst_1;
+					putstatic_b 20;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.expectHciTransmissionFailed
+					aload_3;
+					sload 4;
+					aload 5;
+					sload 6;
+					sload 7;
+					invokeinterface 5 11 8;		// uicc/hci/services/readermode/ReaderMessage
+					return;
+				L4:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+				L5:	goto L10;
+				L6:	astore 8;
+					aload 8;
+					invokevirtual 21;		// getReason()S
+					sconst_3;
+					if_scmpne L8;
+				L7:	sconst_1;
+					putstatic_b 18;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.exceptionDisabledThrown
+				L8:	aload 8;
+					invokevirtual 21;		// getReason()S
+					bspush 10;
+					if_scmpne L10;
+				L9:	sconst_1;
+					putstatic_b 19;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.exceptionNotSatisfiedThrown
+				L10:	return;
+				L11:	aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush -128;
+					if_scmpne L15;
+				L12:	aload_3;
+					invokeinterface 1 11 3;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 9;
+					if_scmpne L15;
+				L13:	getstatic_b 20;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_2.expectHciTransmissionFailed
+					ifeq L15;
+				L14:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+				L15:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L4 L5 L6 6;
+			}
+		}
+
+	}
+
+	.class public Api_2_RMm_Rrp_3 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 readerService 0;		// Luicc/hci/services/readermode/ReaderService;
+			private static final byte INS_HCI_INTERFACE_DISABLED = 1;		// B
+			private static final short OK_EXCEPTION_DISABLED_RECEIVED = -28669;		// S
+			private static boolean expectHciTransmissionFailed;		// Z
+			private static boolean exceptionDisabledThrown;		// Z
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+			uninstall()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/readermode/ReaderListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 13;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 22;		// register()V
+				L1:	aload_0;
+					sconst_2;
+					invokestatic 4;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 5;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderService
+					putfield_a 3;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.readerService
+					getfield_a_this 3;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.readerService
+					aload_0;
+					invokeinterface 2 5 0;		// uicc/hci/services/readermode/ReaderService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 6;
+			}
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 24;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3
+					dup;
+					invokespecial 25;		// uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 26;		// selectingApplet()Z
+					ifeq L2;
+				L1:	getfield_a_this 3;		// reference uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.readerService
+					bspush 80;
+					invokeinterface 2 5 3;		// uicc/hci/services/readermode/ReaderService
+					return;
+				L2:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L5 1 1 L3;
+				L3:	getstatic_b 27;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.exceptionDisabledThrown
+					ifeq L5;
+				L4:	sspush -28669;
+					invokestatic 7;		// javacard/framework/ISOException.throwIt(S)V
+				L5:	return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 5;
+			.locals 6;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 11;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderMessage
+					astore_3;
+					aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 64;
+					if_scmpne_w L10;
+				L1:	sload_1;
+					bspush 80;
+					if_scmpne_w L10;
+				L2:	aload_3;
+					invokeinterface 1 11 4;		// uicc/hci/services/readermode/ReaderMessage
+					sconst_0;
+					baload;
+					slookupswitch L10 2 0 L3 3 L4;
+				L3:	sconst_m1;
+					sstore 4;
+					bspush 10;
+					newarray 11;
+					dup;
+					sconst_0;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_1;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_2;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_3;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_4;
+					sconst_1;
+					bastore;
+					dup;
+					sconst_5;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 6;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 7;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 8;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 9;
+					sconst_1;
+					bastore;
+					astore 5;
+					sconst_0;
+					sstore 6;
+					aload 5;
+					arraylength;
+					sstore 7;
+					sconst_1;
+					putstatic_b 28;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.expectHciTransmissionFailed
+					aload_3;
+					sload 4;
+					aload 5;
+					sload 6;
+					sload 7;
+					invokeinterface 5 11 8;		// uicc/hci/services/readermode/ReaderMessage
+					return;
+				L4:	sconst_1;
+					sconst_0;
+					invokestatic 29;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+				L5:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+				L6:	goto L9;
+				L7:	astore 8;
+					aload 8;
+					invokevirtual 21;		// getReason()S
+					sconst_3;
+					if_scmpne L9;
+				L8:	sconst_1;
+					putstatic_b 27;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.exceptionDisabledThrown
+				L9:	return;
+				L10:	aload_3;
+					invokeinterface 1 11 2;		// uicc/hci/services/readermode/ReaderMessage
+					bspush -128;
+					if_scmpne L14;
+				L11:	aload_3;
+					invokeinterface 1 11 3;		// uicc/hci/services/readermode/ReaderMessage
+					bspush 9;
+					if_scmpne L14;
+				L12:	getstatic_b 28;		// boolean uicc/hci/test/services/readermode/api_2_rmm_rrp/Api_2_RMm_Rrp_3.expectHciTransmissionFailed
+					ifeq L14;
+				L13:	aload_3;
+					invokeinterface 1 11 9;		// uicc/hci/services/readermode/ReaderMessage
+				L14:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L5 L6 L7 6;
+			}
+		}
+
+		.method public uninstall()V 9 {
+			.stack 2;
+			.locals 0;
+
+				L0:	sconst_1;
+					sconst_1;
+					invokestatic 29;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+					return;
+		}
+
+	}
+
+}

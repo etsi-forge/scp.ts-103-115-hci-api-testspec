@@ -1,0 +1,1363 @@
+// converted by version  [v3.0.2]
+// on Fri May 24 11:14:43 CEST 2013
+
+.package uicc/hci/test/framework/api_1_hsr_dae {
+	.aid 0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x0:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.4;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x1:0x0:0x0 1.0;		//uicc/hci/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x1:0x0 1.0;		//uicc/hci/services/cardemulation
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x2:0x0 1.0;		//uicc/hci/services/connectivity
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x3:0x0 1.0;		//uicc/hci/services/readermode
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x1:0x2 Api_1_Hsr_Dae_1;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x2:0x2 Api_1_Hsr_Dae_2;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x3:0x2 Api_1_Hsr_Dae_3;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x4:0x2 Api_1_Hsr_Dae_4;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x5:0x2 Api_1_Hsr_Dae_5;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x6:0x2 Api_1_Hsr_Dae_6;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x21:0x7:0x7:0x2 Api_1_Hsr_Dae_7;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef 2.2 Api_1_Hsr_Dae_1/ceService;
+		// 1
+		instanceFieldRef 2.2 Api_1_Hsr_Dae_2/ceService;
+		// 2
+		instanceFieldRef byte Api_1_Hsr_Dae_2/verificationByte;
+		// 3
+		instanceFieldRef byte Api_1_Hsr_Dae_2/sentOnce;
+		// 4
+		instanceFieldRef byte[] Api_1_Hsr_Dae_2/ibuffer;
+		// 5
+		instanceFieldRef 2.2 Api_1_Hsr_Dae_3/ceService;
+		// 6
+		instanceFieldRef 4.2 Api_1_Hsr_Dae_4/cnnService;
+		// 7
+		instanceFieldRef byte Api_1_Hsr_Dae_4/verificationByte;
+		// 8
+		instanceFieldRef 5.2 Api_1_Hsr_Dae_5/rdrService;
+		// 9
+		instanceFieldRef 4.2 Api_1_Hsr_Dae_6/cnnService;
+		// 10
+		instanceFieldRef 5.2 Api_1_Hsr_Dae_7/rdrService;
+		// 11
+		virtualMethodRef 1.3.1()S;		// getReason()S
+		// 12
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 13
+		.classRef 1.3;		// uicc/hci/framework/HCIException
+		// 14
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 15
+		staticMethodRef 1.4.0(S)Luicc/hci/framework/HCIService;;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+			.descriptor	Luicc/hci/framework/HCIService;	1.2;
+
+		// 16
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 17
+		.classRef 2.2;		// uicc/hci/services/cardemulation/CardEmulationService
+		// 18
+		.classRef Api_1_Hsr_Dae_2;
+		// 19
+		staticMethodRef Api_1_Hsr_Dae_2/<init>()V;
+		// 20
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 21
+		.classRef 2.1;		// uicc/hci/services/cardemulation/CardEmulationMessage
+		// 22
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 23
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 24
+		.classRef Api_1_Hsr_Dae_3;
+		// 25
+		staticMethodRef Api_1_Hsr_Dae_3/<init>()V;
+		// 26
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 27
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 28
+		.classRef 4.2;		// uicc/hci/services/connectivity/ConnectivityService
+		// 29
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 30
+		.classRef Api_1_Hsr_Dae_1;
+		// 31
+		.classRef Api_1_Hsr_Dae_4;
+		// 32
+		staticMethodRef Api_1_Hsr_Dae_4/<init>()V;
+		// 33
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 34
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 35
+		.classRef 5.2;		// uicc/hci/services/readermode/ReaderService
+		// 36
+		staticMethodRef Api_1_Hsr_Dae_1/<init>()V;
+		// 37
+		.classRef Api_1_Hsr_Dae_5;
+		// 38
+		staticMethodRef Api_1_Hsr_Dae_5/<init>()V;
+		// 39
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 40
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 41
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 42
+		.classRef Api_1_Hsr_Dae_6;
+		// 43
+		staticMethodRef Api_1_Hsr_Dae_6/<init>()V;
+		// 44
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 45
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 46
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 47
+		.classRef Api_1_Hsr_Dae_7;
+		// 48
+		staticMethodRef Api_1_Hsr_Dae_7/<init>()V;
+		// 49
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+	}
+
+	.class public Api_1_Hsr_Dae_1 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_TM_FAILED = 16;		// B
+			private static final byte INS_EVENT_RCP_FAILED = 17;		// B
+			private static final byte INS_EVENT_GET_PARAM = 18;		// B
+			private static final byte INS_EVENT_FIELD_OFF = 19;		// B
+			private static final byte INS_WRONG_EVENT = 22;		// B
+			private static final byte INS_EVENT_DEACTIVATE_NON_ACTIV = 21;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 14;		// register()V
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 17;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					aload_0;
+					invokeinterface 2 17 0;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 30;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1
+					dup;
+					invokespecial 36;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 41;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L29 16 22 L3 L7 L11 L15 L29 L19 L24;
+				L3:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush -127;
+					invokeinterface 2 17 3;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush -127;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L4:	goto L6;
+				L5:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	return;
+				L7:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush -126;
+					invokeinterface 2 17 3;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush -126;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L8:	goto L10;
+				L9:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	return;
+				L11:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					sconst_1;
+					invokeinterface 2 17 3;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					sconst_1;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L12:	goto L14;
+				L13:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	return;
+				L15:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush 84;
+					invokeinterface 2 17 3;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush 84;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L16:	goto L18;
+				L17:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	return;
+				L19:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					bspush 80;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L20:	goto L23;
+				L21:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L23;
+				L22:	return;
+				L23:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L24:	getfield_a_this 0;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_1.ceService
+					sconst_2;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L25:	goto L28;
+				L26:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L28;
+				L27:	return;
+				L28:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L29:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+				L7 L8 L9 13;
+				L11 L12 L13 13;
+				L15 L16 L17 13;
+				L19 L20 L21 13;
+				L24 L25 L26 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_2 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private byte[] ibuffer 1;		// [B
+			private byte verificationByte 2;		// B
+			private byte sentOnce 3;		// B
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_DEACTIVATE_VERIFY = 32;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 12;		// register()V
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 17;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 1;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ceService
+					getfield_a_this 1;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ceService
+					aload_0;
+					invokeinterface 2 17 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 1;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ceService
+					bspush 80;
+					invokeinterface 2 17 3;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					sconst_0;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					aload_0;
+					sconst_0;
+					putfield_b 3;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.sentOnce
+					aload_0;
+					sconst_2;
+					sconst_2;
+					invokestatic 16;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 4;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ibuffer
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 18;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2
+					dup;
+					invokespecial 19;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 3;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 20;		// selectingApplet()Z
+					ifeq L2;
+				L1:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					sspush 128;
+					sor;
+					s2b;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L6 1 32 L3;
+				L3:	getfield_b_this 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					sspush 136;
+					sand;
+					sspush 136;
+					if_scmpne L5;
+				L4:	return;
+				L5:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	sload_1;
+					slookupswitch L11 5 -127 L9 -126 L10 1 L7 80 L1 84 L8;
+				L1:	aload_2;
+					checkcast 0 21;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationMessage
+					astore_3;
+					getfield_a_this 4;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ibuffer
+					sconst_0;
+					bspush -112;
+					bastore;
+					getfield_b_this 3;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.sentOnce
+					ifne L3;
+				L2:	aload_0;
+					sconst_1;
+					putfield_b 3;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.sentOnce
+					aload_3;
+					getfield_a_this 4;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ibuffer
+					sconst_0;
+					sconst_2;
+					invokeinterface 4 21 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+					return;
+				L3:	getfield_a_this 1;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ceService
+					bspush 80;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L4:	goto L6;
+				L5:	astore 4;
+					getfield_a_this 4;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ibuffer
+					sconst_0;
+					bspush 111;
+					bastore;
+				L6:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					bspush 8;
+					sor;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					aload_3;
+					getfield_a_this 4;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.ibuffer
+					sconst_0;
+					sconst_2;
+					invokeinterface 4 21 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+					return;
+				L7:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					sconst_4;
+					sor;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					return;
+				L8:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					bspush 16;
+					sor;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					return;
+				L9:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					sconst_1;
+					sor;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					return;
+				L10:	aload_0;
+					dup;
+					getfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+					sconst_2;
+					sor;
+					putfield_b 2;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_2.verificationByte
+				L11:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+			}
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_3 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_TM_FAILED = 16;		// B
+			private static final byte INS_EVENT_RCP_FAILED = 17;		// B
+			private static final byte INS_EVENT_GET_PARAM = 18;		// B
+			private static final byte INS_EVENT_FIELD_OFF = 19;		// B
+			private static final byte INS_EVENT_ON_SEND_DATA = 20;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 22;		// register()V
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 17;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					aload_0;
+					invokeinterface 2 17 0;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 24;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3
+					dup;
+					invokespecial 25;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 26;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L28 16 20 L3 L8 L13 L18 L23;
+				L3:	getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					bspush -127;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L4:	goto L7;
+				L5:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L7;
+				L6:	return;
+				L7:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					bspush -126;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L9:	goto L12;
+				L10:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L12;
+				L11:	return;
+				L12:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L13:	getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					sconst_1;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L14:	goto L17;
+				L15:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L17;
+				L16:	return;
+				L17:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					bspush 84;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L19:	goto L22;
+				L20:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L22;
+				L21:	return;
+				L22:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L23:	getfield_a_this 5;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_3.ceService
+					bspush 80;
+					invokeinterface 2 17 4;		// uicc/hci/services/cardemulation/CardEmulationService
+				L24:	goto L27;
+				L25:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L27;
+				L26:	return;
+				L27:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L28:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+				L8 L9 L10 13;
+				L13 L14 L15 13;
+				L18 L19 L20 13;
+				L23 L24 L25 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_4 3 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 4.2 cnnService 0;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private byte verificationByte 1;		// B
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_TM_FAILED = 16;		// B
+			private static final byte INS_EVENT_RCP_FAILED = 17;		// B
+			private static final byte INS_EVENT_STANDY_BY = 18;		// B
+			private static final byte INS_EVENT_DEACTIVATE_VERIFY = 32;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 4.0 { 		// uicc/hci/services/connectivity/ConnectivityListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 27;		// register()V
+				L1:	aload_0;
+					sconst_4;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/connectivity/ConnectivityService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					sconst_0;
+					putfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 31;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4
+					dup;
+					invokespecial 32;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 33;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L18 4 16 L3 17 L7 18 L11 32 L15;
+				L3:	getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush -127;
+					invokeinterface 2 28 3;		// uicc/hci/services/connectivity/ConnectivityService
+					getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush -127;
+					invokeinterface 2 28 4;		// uicc/hci/services/connectivity/ConnectivityService
+				L4:	goto L6;
+				L5:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	return;
+				L7:	getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush -126;
+					invokeinterface 2 28 3;		// uicc/hci/services/connectivity/ConnectivityService
+					getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush -126;
+					invokeinterface 2 28 4;		// uicc/hci/services/connectivity/ConnectivityService
+				L8:	goto L10;
+				L9:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	return;
+				L11:	getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush 80;
+					invokeinterface 2 28 3;		// uicc/hci/services/connectivity/ConnectivityService
+					getfield_a_this 6;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.cnnService
+					bspush 80;
+					invokeinterface 2 28 4;		// uicc/hci/services/connectivity/ConnectivityService
+				L12:	goto L14;
+				L13:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	return;
+				L15:	getfield_b_this 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					ifeq L17;
+				L16:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L17:	return;
+				L18:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+				L7 L8 L9 13;
+				L11 L12 L13 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 3;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	sload_1;
+					slookupswitch L4 3 -127 L1 -126 L2 80 L3;
+				L1:	aload_0;
+					dup;
+					getfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					sconst_1;
+					sor;
+					putfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					return;
+				L2:	aload_0;
+					dup;
+					getfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					sconst_2;
+					sor;
+					putfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					return;
+				L3:	aload_0;
+					dup;
+					getfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+					sconst_4;
+					sor;
+					putfield_b 7;		// byte uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_4.verificationByte
+				L4:	return;
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_5 4 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 5.2 rdrService 0;		// Luicc/hci/services/readermode/ReaderService;
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_TM_FAILED = 9;		// B
+			private static final byte INS_EVENT_RECEPT_FAILED = 16;		// B
+			private static final byte INS_EVENT_GET_PARAM = 17;		// B
+			private static final byte INS_EVENT_WRT_EXCH_DATA = 18;		// B
+			private static final byte INS_EVENT_TARGET_DISCOVERED = 19;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 5.0 { 		// uicc/hci/services/readermode/ReaderListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 34;		// register()V
+				L1:	aload_0;
+					sconst_2;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 35;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderService
+					putfield_a 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					aload_0;
+					invokeinterface 2 35 0;		// uicc/hci/services/readermode/ReaderService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 37;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5
+					dup;
+					invokespecial 38;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 39;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L23 9 19 L3 L23 L23 L23 L23 L23 L23 L7 L11 L15 L19;
+				L3:	getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush -127;
+					invokeinterface 2 35 3;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush -127;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L4:	goto L6;
+				L5:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	return;
+				L7:	getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush -126;
+					invokeinterface 2 35 3;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush -126;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L8:	goto L10;
+				L9:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	return;
+				L11:	getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					sconst_1;
+					invokeinterface 2 35 3;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					sconst_1;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L12:	goto L14;
+				L13:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	return;
+				L15:	getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					sconst_2;
+					invokeinterface 2 35 3;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					sconst_2;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L16:	goto L18;
+				L17:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L18:	return;
+				L19:	getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush 80;
+					invokeinterface 2 35 3;		// uicc/hci/services/readermode/ReaderService
+					getfield_a_this 8;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_5.rdrService
+					bspush 80;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L20:	goto L22;
+				L21:	astore_3;
+					sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L22:	return;
+				L23:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+				L7 L8 L9 13;
+				L11 L12 L13 13;
+				L15 L16 L17 13;
+				L19 L20 L21 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_6 5 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 4.2 cnnService 0;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_STAND_BY = 18;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 4.0 { 		// uicc/hci/services/connectivity/ConnectivityListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 40;		// register()V
+				L1:	aload_0;
+					sconst_4;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 9;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_6.cnnService
+					getfield_a_this 9;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_6.cnnService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/connectivity/ConnectivityService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 42;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_6
+					dup;
+					invokespecial 43;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_6.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 44;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L8 1 18 L3;
+				L3:	getfield_a_this 9;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_6.cnnService
+					bspush 80;
+					invokeinterface 2 28 4;		// uicc/hci/services/connectivity/ConnectivityService
+				L4:	goto L7;
+				L5:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L7;
+				L6:	return;
+				L7:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_1_Hsr_Dae_7 6 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 5.2 rdrService 0;		// Luicc/hci/services/readermode/ReaderService;
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_EVENT_GET_PARAM = 16;		// B
+			private static final byte INS_EVENT_WRT_EXCH_DATA = 17;		// B
+			private static final byte INS_EVENT_TARGET_DISCOVERED = 18;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 5.0 { 		// uicc/hci/services/readermode/ReaderListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 2;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 23;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 45;		// register()V
+				L1:	aload_0;
+					sconst_2;
+					invokestatic 15;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 35;		// T_CLASSORINTERFACE uicc/hci/services/readermode/ReaderService
+					putfield_a 10;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.rdrService
+					getfield_a_this 10;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.rdrService
+					aload_0;
+					invokeinterface 2 35 0;		// uicc/hci/services/readermode/ReaderService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 13;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 47;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7
+					dup;
+					invokespecial 48;		// uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 49;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 46;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L21 16 18 L3 L9 L15;
+				L3:	getfield_a_this 10;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.rdrService
+					sconst_1;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L4:	goto L8;
+				L5:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L7;
+				L6:	return;
+				L7:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	return;
+				L9:	getfield_a_this 10;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.rdrService
+					sconst_2;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L10:	goto L14;
+				L11:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L13;
+				L12:	return;
+				L13:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L14:	return;
+				L15:	getfield_a_this 10;		// reference uicc/hci/test/framework/api_1_hsr_dae/Api_1_Hsr_Dae_7.rdrService
+					bspush 80;
+					invokeinterface 2 35 4;		// uicc/hci/services/readermode/ReaderService
+				L16:	goto L20;
+				L17:	astore_3;
+					aload_3;
+					invokevirtual 11;		// getReason()S
+					bspush 6;
+					if_scmpne L19;
+				L18:	return;
+				L19:	sspush 28418;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+				L20:	return;
+				L21:	sspush 27904;
+					invokestatic 29;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 13;
+				L9 L10 L11 13;
+				L15 L16 L17 13;
+			}
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+	}
+
+}

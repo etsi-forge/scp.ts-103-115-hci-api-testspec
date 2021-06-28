@@ -1,0 +1,1440 @@
+// converted by version 1.3
+// on Thu Mar 19 19:18:29 CET 2015
+
+.package uicc/hci/test/services/connectivity/api_2_cns_ste {
+	.aid 0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x2:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.4;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x1:0x0:0x0 1.1;		//uicc/hci/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x1:0x0 1.0;		//uicc/hci/services/cardemulation
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x2:0x0 1.0;		//uicc/hci/services/connectivity
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x1:0x51:0x2 1.2;		//org/globalplatform/contactless
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x1:0x1:0x2 Api_2_CNs_Ste_1;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x1:0x2:0x2 Api_2_CNs_Ste_2;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x1:0x4:0x2 Api_2_CNs_Ste_4;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x1:0x5:0x2 Api_2_CNs_Ste_5;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x1A:0x1:0x6:0x2 Api_2_CNs_Ste_6;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef 3.2 Api_2_CNs_Ste_1/cnnService;
+		// 1
+		instanceFieldRef byte[] Api_2_CNs_Ste_1/aid;
+		// 2
+		instanceFieldRef byte[] Api_2_CNs_Ste_1/params;
+		// 3
+		instanceFieldRef 3.2 Api_2_CNs_Ste_2/cnnService;
+		// 4
+		instanceFieldRef byte[] Api_2_CNs_Ste_2/aid;
+		// 5
+		instanceFieldRef byte[] Api_2_CNs_Ste_2/params;
+		// 6
+		instanceFieldRef 3.2 Api_2_CNs_Ste_4/cnnService;
+		// 7
+		instanceFieldRef byte[] Api_2_CNs_Ste_4/aid;
+		// 8
+		instanceFieldRef byte[] Api_2_CNs_Ste_4/params;
+		// 9
+		instanceFieldRef 3.2 Api_2_CNs_Ste_5/cnnService;
+		// 10
+		instanceFieldRef byte[] Api_2_CNs_Ste_5/aid;
+		// 11
+		instanceFieldRef byte[] Api_2_CNs_Ste_5/params;
+		// 12
+		instanceFieldRef 3.2 Api_2_CNs_Ste_6/cnnService;
+		// 13
+		instanceFieldRef byte[] Api_2_CNs_Ste_6/aid;
+		// 14
+		instanceFieldRef byte[] Api_2_CNs_Ste_6/params;
+		// 15
+		virtualMethodRef 1.3.1()S;		// getReason()S
+		// 16
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 17
+		staticMethodRef 1.4.0(S)Luicc/hci/framework/HCIService;;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+			.descriptor	Luicc/hci/framework/HCIService;	1.2;
+
+		// 18
+		classRef 2.2;		// uicc/hci/services/cardemulation/CardEmulationService
+		// 19
+		classRef 3.2;		// uicc/hci/services/connectivity/ConnectivityService
+		// 20
+		classRef Api_2_CNs_Ste_2;
+		// 21
+		staticMethodRef Api_2_CNs_Ste_2/<init>()V;
+		// 22
+		classRef 4.5;		// java/lang/ArrayIndexOutOfBoundsException
+		// 23
+		classRef 4.2;		// java/lang/Exception
+		// 24
+		classRef 4.7;		// java/lang/NullPointerException
+		// 25
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 26
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 27
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 28
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 29
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 30
+		classRef Api_2_CNs_Ste_4;
+		// 31
+		staticMethodRef Api_2_CNs_Ste_4/<init>()V;
+		// 32
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 33
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 34
+		classRef 1.3;		// uicc/hci/framework/HCIException
+		// 35
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 36
+		classRef Api_2_CNs_Ste_1;
+		// 37
+		classRef Api_2_CNs_Ste_5;
+		// 38
+		staticMethodRef Api_2_CNs_Ste_5/<init>()V;
+		// 39
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 40
+		staticMethodRef 5.5.4(SZ)V;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+		// 41
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 42
+		staticMethodRef Api_2_CNs_Ste_1/<init>()V;
+		// 43
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 44
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 45
+		classRef Api_2_CNs_Ste_6;
+		// 46
+		staticMethodRef Api_2_CNs_Ste_6/<init>()V;
+		// 47
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+	}
+
+	.class public Api_2_CNs_Ste_1 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private byte[] aid 0;		// [B
+			private byte[] params 1;		// [B
+			private 3.2 cnnService 2;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final byte INS_SEND_DATA = 1;		// B
+			private static final byte INS_SEND_DATA_HCI_DISABLED = 2;		// B
+			private static final byte INS_SEND_DATA_WRONG_CONDITIONS = 3;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 35;		// register()V
+				L1:	sconst_3;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 18;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					astore_1;
+					aload_1;
+					aload_0;
+					invokeinterface 2 18 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					aload_0;
+					sconst_4;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 19;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 0;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.cnnService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					bspush 16;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					aload_0;
+					bspush 10;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 34;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 36;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1
+					dup;
+					invokespecial 42;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 43;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 44;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_0;
+					bspush -96;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_2;
+					sconst_0;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_3;
+					sconst_0;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_4;
+					bspush 9;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 9;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 10;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 11;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 12;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 13;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 14;
+					sconst_1;
+					bastore;
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					bspush 15;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_1;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_2;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_3;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_4;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					bspush 9;
+					sconst_1;
+					bastore;
+					aload_2;
+					sconst_1;
+					baload;
+					stableswitch L16 1 3 L3 L6 L11;
+				L3:	getfield_a_this 0;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.cnnService
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L4:	return;
+				L5:	astore_3;
+					sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	getfield_a_this 0;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.cnnService
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L7:	goto L10;
+				L8:	astore_3;
+					aload_3;
+					invokevirtual 15;		// getReason()S
+					sconst_3;
+					if_scmpne L10;
+				L9:	return;
+				L10:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	getfield_a_this 0;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.cnnService
+					getfield_a_this 1;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 2;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_1.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L12:	return;
+				L13:	astore_3;
+					aload_3;
+					invokevirtual 15;		// getReason()S
+					bspush 10;
+					if_scmpne L15;
+				L14:	return;
+				L15:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	sspush 27904;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 34;
+				L6 L7 L8 34;
+				L11 L12 L13 34;
+			}
+		}
+
+	}
+
+	.class public Api_2_CNs_Ste_2 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private byte[] aid 0;		// [B
+			private byte[] params 1;		// [B
+			private 3.2 cnnService 2;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final byte INS_SEND_DATA_1 = 1;		// B
+			private static final byte INS_SEND_DATA_2 = 2;		// B
+			private static final byte INS_SEND_DATA_3 = 3;		// B
+			private static final byte INS_SEND_DATA_4 = 4;		// B
+			private static final byte INS_SEND_DATA_5 = 5;		// B
+			private static final byte INS_SEND_DATA_6 = 6;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 16;		// register()V
+				L1:	sconst_3;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 18;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					astore_1;
+					aload_1;
+					aload_0;
+					invokeinterface 2 18 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					aload_0;
+					sconst_4;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 19;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 3;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.cnnService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					bspush 16;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					aload_0;
+					bspush 10;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 34;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 20;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2
+					dup;
+					invokespecial 21;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 6;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 25;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_0;
+					bspush -96;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_2;
+					sconst_0;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_3;
+					sconst_0;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_4;
+					bspush 9;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 9;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 10;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 11;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 12;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 13;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 14;
+					sconst_1;
+					bastore;
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					bspush 15;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_1;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_2;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_3;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_4;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					bspush 9;
+					sconst_1;
+					bastore;
+					sconst_0;
+					sstore_2;
+					bspush 16;
+					sstore_3;
+					sconst_0;
+					sstore 4;
+					bspush 10;
+					sstore 5;
+					aload_1;
+					invokevirtual 44;		// getBuffer()[B
+					astore 6;
+					aload 6;
+					sconst_1;
+					baload;
+					stableswitch L9 1 6 L3 L4 L5 L6 L7 L8;
+				L3:	bspush 20;
+					sstore_2;
+					goto L10;
+				L4:	bspush 20;
+					sstore_3;
+					goto L10;
+				L5:	bspush 20;
+					sstore 4;
+					goto L10;
+				L6:	bspush 20;
+					sstore 5;
+					goto L10;
+				L7:	aload_0;
+					aconst_null;
+					putfield_a 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					goto L10;
+				L8:	aload_0;
+					aconst_null;
+					putfield_a 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					goto L10;
+				L9:	sspush 27904;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L10:	aload 6;
+					sconst_1;
+					baload;
+					stableswitch L16 1 4 L11 L11 L11 L11;
+				L11:	getfield_a_this 3;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.cnnService
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sload_2;
+					sload_3;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sload 4;
+					sload 5;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L12:	goto L15;
+				L13:	astore 7;
+					return;
+				L14:	astore 7;
+				L15:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L16:	getfield_a_this 3;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.cnnService
+					getfield_a_this 4;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.aid
+					sload_2;
+					sload_3;
+					getfield_a_this 5;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_2.params
+					sload 4;
+					sload 5;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L17:	goto L20;
+				L18:	astore 7;
+					return;
+				L19:	astore 7;
+				L20:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L11 L12 L13 22;
+				L11 L12 L14 23;
+				L16 L17 L18 24;
+				L16 L17 L19 23;
+			}
+		}
+
+	}
+
+	.class public Api_2_CNs_Ste_4 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private byte[] aid 0;		// [B
+			private byte[] params 1;		// [B
+			private 3.2 cnnService 2;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final byte INS_SEND_DATA_WRONG_CONDITIONS = 3;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 3.0 { 		// uicc/hci/services/connectivity/ConnectivityListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 26;		// register()V
+				L1:	aload_0;
+					sconst_4;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 19;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 6;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.cnnService
+					getfield_a_this 6;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.cnnService
+					aload_0;
+					invokeinterface 2 19 0;		// uicc/hci/services/connectivity/ConnectivityService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					bspush 16;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					aload_0;
+					bspush 10;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 34;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 30;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4
+					dup;
+					invokespecial 31;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 32;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 44;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_0;
+					bspush -96;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_2;
+					sconst_0;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_3;
+					sconst_0;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_4;
+					bspush 9;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 9;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 10;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 11;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 12;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 13;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 14;
+					sconst_1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					bspush 15;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_1;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_2;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_3;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_4;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					bspush 9;
+					sconst_1;
+					bastore;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L8 1 3 L3;
+				L3:	getfield_a_this 6;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.cnnService
+					getfield_a_this 7;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 8;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_4.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L4:	return;
+				L5:	astore_3;
+					aload_3;
+					invokevirtual 15;		// getReason()S
+					bspush 10;
+					if_scmpne L7;
+				L6:	return;
+				L7:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L8:	sspush 27904;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 34;
+			}
+		}
+
+	}
+
+	.class public Api_2_CNs_Ste_5 3 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private byte[] aid 0;		// [B
+			private byte[] params 1;		// [B
+			private 3.2 cnnService 2;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final byte INS_SEND_DATA_HCI_DISABLED = 2;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+			uninstall()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 0.18 { 		// javacard/framework/AppletEvent
+				9;		// uninstall()V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 33;		// register()V
+				L1:	sconst_3;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 18;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					astore_1;
+					aload_1;
+					aload_0;
+					invokeinterface 2 18 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					aload_0;
+					sconst_4;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 19;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 9;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.cnnService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					bspush 16;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					aload_0;
+					bspush 10;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 34;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 37;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5
+					dup;
+					invokespecial 38;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 39;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 44;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_0;
+					bspush -96;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_2;
+					sconst_0;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_3;
+					sconst_0;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_4;
+					bspush 9;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 9;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 10;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 11;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 12;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 13;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 14;
+					sconst_1;
+					bastore;
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					bspush 15;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_1;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_2;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_3;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_4;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					bspush 9;
+					sconst_1;
+					bastore;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L9 1 2 L3;
+				L3:	sconst_1;
+					sconst_0;
+					invokestatic 40;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+				L4:	getfield_a_this 9;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.cnnService
+					getfield_a_this 10;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 11;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_5.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L5:	goto L8;
+				L6:	astore_3;
+					aload_3;
+					invokevirtual 15;		// getReason()S
+					sconst_3;
+					if_scmpne L8;
+				L7:	return;
+				L8:	sspush 27264;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L9:	sspush 27904;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L4 L5 L6 34;
+			}
+		}
+
+		.method public uninstall()V 9 {
+			.stack 2;
+			.locals 0;
+
+				L0:	sconst_1;
+					sconst_1;
+					invokestatic 40;		// org/globalplatform/contactless/GPCLSystem.setCommunicationInterface(SZ)V
+					return;
+		}
+
+	}
+
+	.class public Api_2_CNs_Ste_6 4 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private byte[] aid 0;		// [B
+			private byte[] params 1;		// [B
+			private 3.2 cnnService 2;		// Luicc/hci/services/connectivity/ConnectivityService;
+			private static final byte INS_PREPARE_AND_SEND_TRANS_EVT = 1;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 27;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 41;		// register()V
+				L1:	aload_0;
+					sconst_4;
+					invokestatic 17;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 19;		// T_CLASSORINTERFACE uicc/hci/services/connectivity/ConnectivityService
+					putfield_a 12;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.cnnService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_0;
+					bspush 16;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					aload_0;
+					bspush 10;
+					sconst_1;
+					invokestatic 29;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 34;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 45;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6
+					dup;
+					invokespecial 46;		// uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.<init>()V
+					pop;
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 7;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 47;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 44;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_0;
+					bspush -96;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_2;
+					sconst_0;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_3;
+					sconst_0;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_4;
+					bspush 9;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 9;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 10;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 11;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 12;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 13;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 14;
+					sconst_1;
+					bastore;
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					bspush 15;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_1;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_2;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_3;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_4;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_5;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					bspush 6;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					bspush 7;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					bspush 8;
+					sconst_1;
+					bastore;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					bspush 9;
+					sconst_1;
+					bastore;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L6 1 1 L3;
+				L3:	getfield_a_this 12;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.cnnService
+					getfield_a_this 13;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.aid
+					sconst_0;
+					bspush 16;
+					getfield_a_this 14;		// reference uicc/hci/test/services/connectivity/api_2_cns_ste/Api_2_CNs_Ste_6.params
+					sconst_0;
+					bspush 10;
+					invokeinterface 7 19 7;		// uicc/hci/services/connectivity/ConnectivityService
+				L4:	return;
+				L5:	astore_3;
+					sspush 28416;
+					aload_3;
+					invokevirtual 15;		// getReason()S
+					s2b;
+					sor;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	sspush 27904;
+					invokestatic 28;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L3 L4 L5 34;
+			}
+		}
+
+	}
+
+}

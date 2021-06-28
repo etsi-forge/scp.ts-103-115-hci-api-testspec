@@ -1,0 +1,863 @@
+// converted by version  [v3.0.2]
+// on Fri May 24 11:14:50 CEST 2013
+
+.package uicc/hci/test/services/cardemulation/api_2_cem_ssd {
+	.aid 0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x25:0x2:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.4;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x1:0x0:0x0 1.0;		//uicc/hci/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x16:0x2:0x1:0x0 1.0;		//uicc/hci/services/cardemulation
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x25:0x2:0x1:0x2 Api_2_CEm_Ssd_1;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x25:0x2:0x2:0x2 Api_2_CEm_Ssd_2;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x25:0x2:0x3:0x2 Api_2_CEm_Ssd_3;
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x25:0x2:0x4:0x2 Api_2_CEm_Ssd_4;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] Api_2_CEm_Ssd_1/ibuffer;
+		// 1
+		instanceFieldRef byte[] Api_2_CEm_Ssd_1/exceptions;
+		// 2
+		instanceFieldRef 2.2 Api_2_CEm_Ssd_1/ceService;
+		// 3
+		instanceFieldRef byte[] Api_2_CEm_Ssd_2/ibuffer;
+		// 4
+		instanceFieldRef 2.2 Api_2_CEm_Ssd_2/ceService;
+		// 5
+		instanceFieldRef byte[] Api_2_CEm_Ssd_3/ibuffer;
+		// 6
+		instanceFieldRef 2.2 Api_2_CEm_Ssd_3/ceService;
+		// 7
+		instanceFieldRef byte[] Api_2_CEm_Ssd_4/ibuffer;
+		// 8
+		instanceFieldRef 2.2 Api_2_CEm_Ssd_4/ceService;
+		// 9
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 10
+		.classRef Api_2_CEm_Ssd_1;
+		// 11
+		staticMethodRef Api_2_CEm_Ssd_1/<init>()V;
+		// 12
+		.classRef 2.1;		// uicc/hci/services/cardemulation/CardEmulationMessage
+		// 13
+		virtualMethodRef 1.3.1()S;		// getReason()S
+		// 14
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 15
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 16
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 17
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 18
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 19
+		.classRef Api_2_CEm_Ssd_2;
+		// 20
+		staticMethodRef Api_2_CEm_Ssd_2/<init>()V;
+		// 21
+		.classRef 3.5;		// java/lang/ArrayIndexOutOfBoundsException
+		// 22
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 23
+		.classRef 1.3;		// uicc/hci/framework/HCIException
+		// 24
+		staticMethodRef 1.4.0(S)Luicc/hci/framework/HCIService;;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+			.descriptor	Luicc/hci/framework/HCIService;	1.2;
+
+		// 25
+		.classRef Api_2_CEm_Ssd_3;
+		// 26
+		staticMethodRef Api_2_CEm_Ssd_3/<init>()V;
+		// 27
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 28
+		.classRef 2.2;		// uicc/hci/services/cardemulation/CardEmulationService
+		// 29
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 30
+		.classRef Api_2_CEm_Ssd_4;
+		// 31
+		staticMethodRef Api_2_CEm_Ssd_4/<init>()V;
+		// 32
+		.classRef 3.7;		// java/lang/NullPointerException
+	}
+
+	.class public Api_2_CEm_Ssd_1 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private byte[] ibuffer 1;		// [B
+			private byte[] exceptions 2;		// [B
+			private static final short SW_EVENT_CONDITIONS_HCI_DISABLED = -28671;		// S
+			private static final short SW_EVENT_CONDITIONS_FRAGMENTED_MESSAGE = -28670;		// S
+			private static final short SW_EVENT_CONDITIONS_NO_RESOURCES = -28669;		// S
+			private static final short SW_METHOD_NOT_SUPPORTED = 28418;		// S
+			private static final byte INS_CHECK_FOR_EXCEPTION = 1;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 18;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 29;		// register()V
+					aload_0;
+					bspush 9;
+					sconst_1;
+					invokestatic 17;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					aload_0;
+					sconst_1;
+					newarray 11;
+					putfield_a 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 24;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 2;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ceService
+					getfield_a_this 2;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ceService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 2;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ceService
+					bspush 80;
+					invokeinterface 2 28 3;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 23;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 10;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1
+					dup;
+					invokespecial 11;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 12;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationMessage
+					astore_3;
+					sload_1;
+					slookupswitch L11 3 1 L11 80 L1 84 L11;
+				L1:	getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_1;
+					sconst_2;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_2;
+					sconst_3;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_3;
+					sconst_4;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_4;
+					sconst_5;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_5;
+					bspush 6;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					bspush 6;
+					bspush 7;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					bspush 7;
+					bspush 8;
+					bastore;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					bspush 8;
+					bspush 9;
+					bastore;
+				L2:	aload_3;
+					getfield_a_this 0;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.ibuffer
+					sconst_2;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L3:	goto L11;
+				L4:	astore 4;
+					aload 4;
+					invokevirtual 13;		// getReason()S
+					sconst_3;
+					if_scmpne L6;
+				L5:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					dup2;
+					baload;
+					sconst_1;
+					sor;
+					bastore;
+					goto L11;
+				L6:	aload 4;
+					invokevirtual 13;		// getReason()S
+					bspush 7;
+					if_scmpne L8;
+				L7:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					dup2;
+					baload;
+					sconst_2;
+					sor;
+					bastore;
+					goto L11;
+				L8:	aload 4;
+					invokevirtual 13;		// getReason()S
+					bspush 8;
+					if_scmpne L10;
+				L9:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					dup2;
+					baload;
+					sconst_4;
+					sor;
+					bastore;
+					goto L11;
+				L10:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					dup2;
+					baload;
+					sspush 128;
+					sor;
+					s2b;
+					bastore;
+				L11:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L2 L3 L4 23;
+			}
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 14;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 15;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_1;
+					baload;
+					slookupswitch L12 1 1 L3;
+				L3:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					baload;
+					sconst_1;
+					sand;
+					sconst_1;
+					if_scmpne L5;
+				L4:	sspush -28671;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+					goto L11;
+				L5:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					baload;
+					sconst_2;
+					sand;
+					sconst_2;
+					if_scmpne L7;
+				L6:	sspush -28670;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+					goto L11;
+				L7:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					baload;
+					sconst_4;
+					sand;
+					sconst_4;
+					if_scmpne L9;
+				L8:	sspush -28669;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+					goto L11;
+				L9:	getfield_a_this 1;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_1.exceptions
+					sconst_0;
+					baload;
+					sspush 128;
+					sand;
+					sspush 128;
+					if_scmpne L11;
+				L10:	sspush 28418;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L11:	return;
+				L12:	sspush 27904;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+	}
+
+	.class public Api_2_CEm_Ssd_2 1 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private byte[] ibuffer 1;		// [B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 18;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 16;		// register()V
+					aload_0;
+					bspush 9;
+					sconst_1;
+					invokestatic 17;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 24;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 4;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ceService
+					getfield_a_this 4;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ceService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 4;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ceService
+					bspush 80;
+					invokeinterface 2 28 3;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 23;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 19;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2
+					dup;
+					invokespecial 20;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 12;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationMessage
+					astore_3;
+					sload_1;
+					slookupswitch L5 3 1 L5 80 L1 84 L5;
+				L1:	getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_1;
+					sconst_2;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_2;
+					sconst_3;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_3;
+					sconst_4;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_4;
+					sconst_5;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_5;
+					bspush 6;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					bspush 6;
+					bspush 7;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					bspush 7;
+					bspush 8;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					bspush 8;
+					bspush 9;
+					bastore;
+				L2:	aload_3;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_2;
+					bspush 15;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L3:	goto L5;
+				L4:	astore 4;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_2;
+					sconst_m1;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_3;
+					sconst_m1;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_4;
+					sconst_m1;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_5;
+					sconst_m1;
+					bastore;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					bspush 6;
+					sconst_m1;
+					bastore;
+					aload_3;
+					getfield_a_this 3;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_2.ibuffer
+					sconst_2;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L5:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L2 L3 L4 21;
+			}
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_2_CEm_Ssd_3 2 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private byte[] ibuffer 1;		// [B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 18;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 22;		// register()V
+					aload_0;
+					bspush 9;
+					sconst_1;
+					invokestatic 17;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 24;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 6;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ceService
+					getfield_a_this 6;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ceService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 6;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ceService
+					bspush 80;
+					invokeinterface 2 28 3;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 23;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 25;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3
+					dup;
+					invokespecial 26;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 12;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationMessage
+					astore_3;
+					sload_1;
+					slookupswitch L5 3 1 L5 80 L1 84 L5;
+				L1:	getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_0;
+					sconst_1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_1;
+					sconst_2;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_2;
+					sconst_3;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_3;
+					sconst_4;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_4;
+					sconst_5;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_5;
+					bspush 6;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					bspush 6;
+					bspush 7;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					bspush 7;
+					bspush 8;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					bspush 8;
+					bspush 9;
+					bastore;
+				L2:	aload_3;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					bspush 15;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L3:	goto L5;
+				L4:	astore 4;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_2;
+					sconst_m1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_3;
+					sconst_m1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_4;
+					sconst_m1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_5;
+					sconst_m1;
+					bastore;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					bspush 6;
+					sconst_m1;
+					bastore;
+					aload_3;
+					getfield_a_this 5;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_3.ibuffer
+					sconst_2;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L5:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L2 L3 L4 21;
+			}
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+	.class public Api_2_CEm_Ssd_4 3 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 2.2 ceService 0;		// Luicc/hci/services/cardemulation/CardEmulationService;
+			private byte[] ibuffer 1;		// [B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			onCallback(BLuicc/hci/framework/HCIMessage;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.0 { 		// uicc/hci/framework/HCIListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+			.interface 2.0 { 		// uicc/hci/services/cardemulation/CardEmulationListener
+				8;		// onCallback(BLuicc/hci/framework/HCIMessage;)V
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 18;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 27;		// register()V
+					aload_0;
+					sconst_5;
+					sconst_1;
+					invokestatic 17;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+				L1:	aload_0;
+					sconst_3;
+					invokestatic 24;		// uicc/hci/framework/HCIDevice.getHCIService(S)Luicc/hci/framework/HCIService;
+					checkcast 0 28;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationService
+					putfield_a 8;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ceService
+					getfield_a_this 8;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ceService
+					aload_0;
+					invokeinterface 2 28 0;		// uicc/hci/services/cardemulation/CardEmulationService
+					getfield_a_this 8;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ceService
+					bspush 80;
+					invokeinterface 2 28 3;		// uicc/hci/services/cardemulation/CardEmulationService
+				L2:	goto L4;
+				L3:	astore_1;
+					sspush 27012;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 23;
+			}
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 30;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4
+					dup;
+					invokespecial 31;		// uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.<init>()V
+					pop;
+					return;
+		}
+
+		.method public onCallback(BLuicc/hci/framework/HCIMessage;)V 8 {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Luicc/hci/framework/HCIMessage;	1.1;
+
+				L0:	aload_2;
+					checkcast 0 12;		// T_CLASSORINTERFACE uicc/hci/services/cardemulation/CardEmulationMessage
+					astore_3;
+					sload_1;
+					slookupswitch L4 3 1 L4 80 L1 84 L4;
+				L1:	aload_3;
+					aconst_null;
+					sconst_2;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L2:	goto L4;
+				L3:	astore 4;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_0;
+					sconst_m1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_1;
+					sconst_m1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_2;
+					sconst_m1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_3;
+					sconst_m1;
+					bastore;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_4;
+					sconst_m1;
+					bastore;
+					aload_3;
+					getfield_a_this 7;		// reference uicc/hci/test/services/cardemulation/api_2_cem_ssd/Api_2_CEm_Ssd_4.ibuffer
+					sconst_0;
+					sconst_5;
+					invokeinterface 4 12 8;		// uicc/hci/services/cardemulation/CardEmulationMessage
+				L4:	return;
+			.exceptionTable {
+				// start_block end_block handler_block catch_type_index
+				L1 L2 L3 32;
+			}
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 0;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	return;
+		}
+
+	}
+
+}
