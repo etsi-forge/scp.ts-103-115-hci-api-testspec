@@ -15,7 +15,7 @@ import uicc.hci.services.connectivity.ConnectivityService;
  * The method with the following header shall be compliant to its definition in the API.
  * <code>byte getType()</code>
  */
-public class Api_1_Hme_Mty_2 extends Applet implements ConnectivityListener {
+public class Api_1_Hme_Mty_2 extends Applet implements MultiSelectable, ConnectivityListener {
 
 
 	/*
@@ -135,5 +135,12 @@ public class Api_1_Hme_Mty_2 extends Applet implements ConnectivityListener {
 		default:
 			ISOException.throwIt(ISO7816.SW_INS_NOT_SUPPORTED);
 		}
+	}
+	
+	public coid deselect(boolean arg0){
+	}
+	
+	public boolean select(boolean arg0){
+		return true;
 	}
 }

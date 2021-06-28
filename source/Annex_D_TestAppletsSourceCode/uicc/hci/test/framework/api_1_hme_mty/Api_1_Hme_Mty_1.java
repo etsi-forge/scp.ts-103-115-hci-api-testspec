@@ -16,7 +16,7 @@ import uicc.hci.services.cardemulation.CardEmulationService;
  * The method with the following header shall be compliant to its definition in the API.
  * <code>byte getType()</code>
  */
-public class Api_1_Hme_Mty_1 extends Applet implements CardEmulationListener {
+public class Api_1_Hme_Mty_1 extends Applet implements MultiSelectable, CardEmulationListener {
 
 
 	/*
@@ -120,5 +120,12 @@ public class Api_1_Hme_Mty_1 extends Applet implements CardEmulationListener {
 	 */
 	public void process(APDU arg0) throws ISOException {
 
+	}
+	
+	public coid deselect(boolean arg0){
+	}
+	
+	public boolean select(boolean arg0){
+		return true;
 	}
 }
