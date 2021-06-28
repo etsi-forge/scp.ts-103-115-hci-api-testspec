@@ -18,12 +18,10 @@ public class Api_2_RMm_Srx_2 extends Applet implements ReaderListener {
 	/**
 	 * INS values to determine which feature to test or verify
 	 */
-	private static final byte INS_TEST_HCI_DISABLED = 0x01;
 	private static final byte INS_TEST_NULLPOINTER = 0x02;
 	private static final byte INS_TEST_ARRAYBOUNDS_L = 0x03;
 	private static final byte INS_TEST_ARRAYBOUNDS_H = 0x04;
 	private static final byte INS_TEST_ILLIGALVALUE = 0x05;
-	private static final byte INS_VERIFY_HCI_DISABLED = 0x11;
 	private static final byte INS_VERIFY_NULLPOINTER = 0x12;
 	private static final byte INS_VERIFY_ARRAYBOUNDS_L = 0x13;
 	private static final byte INS_VERIFY_ARRAYBOUNDS_H = 0x14;
@@ -32,13 +30,12 @@ public class Api_2_RMm_Srx_2 extends Applet implements ReaderListener {
 	/**
 	 * Keeps the feature to test. Value is set in process() and used in onCallback().
 	 */
-	private byte featureToTest;
+	private int featureToTest;
 
 	/**
 	 * Variables to remember the thrown exception. Set in onCallback() and evaluated in
 	 * process() with INS >= 0x11.
 	 */
-	private boolean exceptionHciDisabledThrown;
 	private boolean exceptionArrayIndexThrown;
 	private boolean exceptionIlligalValueThrown;
 	private boolean exceptionNullPointerThrown;
@@ -91,9 +88,6 @@ public class Api_2_RMm_Srx_2 extends Applet implements ReaderListener {
 		byte buffer[] = apdu.getBuffer();
 
 		switch (buffer[ISO7816.OFFSET_INS]) {
-		case INS_TEST_HCI_DISABLED:
-			featureToTest = 1;
-			break;
 		case INS_TEST_NULLPOINTER:
 			featureToTest = 2;
 			break;
@@ -107,11 +101,6 @@ public class Api_2_RMm_Srx_2 extends Applet implements ReaderListener {
 			featureToTest = 5;
 			break;
 			
-		case INS_VERIFY_HCI_DISABLED:
-			if (exceptionHciDisabledThrown) {
-				ISOException.throwIt((short) (ISO7816.SW_NO_ERROR + 1));
-			}
-			break;
 		case INS_VERIFY_NULLPOINTER:
 			if (exceptionNullPointerThrown) {
 				ISOException.throwIt((short) (ISO7816.SW_NO_ERROR + 2));
@@ -176,13 +165,6 @@ public class Api_2_RMm_Srx_2 extends Applet implements ReaderListener {
 					try {
 						readerMessage.prepareAndSendWriteXchgDataCommand(timeout,
 								data, offset, len);
-					} catch (HCIException e) {
-						if (e.getReason() == HCIException.HCI_CURRENTLY_DISABLED) {
-							if (featureToTest == 1) {
-								exceptionHciDisabledThrown = true;
-							}
-							return;
-						}
 					} catch (ArrayIndexOutOfBoundsException e) {
 						if (featureToTest == 3 || featureToTest == 4) {
 							exceptionArrayIndexThrown = true;
